@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gas Utility{% endblock %}</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Header content goes here -->
+        <h1>Gas Utility Company</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'submit_request' %}">Submit Request</a></li>
+                <li><a href="{% url 'track_requests' %}">Track Requests</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Default content if not overridden by child templates -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Footer content goes here -->
+        <p>&copy; 2024 Gas Utility Company. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to your JavaScript file -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
